@@ -22,72 +22,87 @@ export default class SignInForm extends Component {
         this.setState({ isLoading: true });
         this.props.userSignInRequest(values.username, values.password);
         this.props.resetSignInForm();
-        // this.props.history.push('/');
-        this.setState({ isLoading: false });
+        setTimeout(() => {
+            window.location.replace('/');
+        }, 1000);
+        setTimeout(() => {
+            this.setState({ isLoading: false });
+        }, 500);
     }
     render() {
-        // console.log(this.pro)
         return (
-            <Form model="signin" className="login-form" onSubmit={(values) => this.onSubmitHandler(values)}>
-                <h1 className="font-weight-bold text-center">Sign In</h1>
-                <h4 className="text-center">Welcome!</h4>
-                <div className="pt-3">
-                    <Label>Username</Label>
-                    <Control.text
-                        className={cx("input", "form-control")}
-                        model=".username"
-                        id="username"
-                        name="username"
-                        placeholder="Username"
-                        validators={{
-                            required
-                        }}
-                    />
-                    <Errors
-                        className="text-danger"
-                        model=".username"
-                        show="touched"
-                        messages={{
-                            required: 'Required'
-                        }}
-                    />
-                </div>
-                <div className="pt-3">
-                    <Label>Password</Label>
-                    <Control.text
-                        type="password"
-                        className={cx("input", "form-control")}
-                        model=".password"
-                        id="password"
-                        name="password"
-                        placeholder="Password"
-                        validators={{
-                            required
-                        }}
-                    />
-                    <Errors
-                        className="text-danger"
-                        model=".password"
-                        show="touched"
-                        messages={{
-                            required: 'Required'
-                        }}
-                    />
-                </div>
-                <div className="pt-3">
-                    <Button disabled={this.state.isLoading} className="btn-lg btn-dark btn-block">Sign In</Button>
-                </div>
-                <div className="text-center pt-3">
-                    {/* Or continue with your social account */}
-                </div>
-                {/* <FacebookLoginButton className="mt-3 mb-3" /> */}
-                <div className="text-center">
-                    Dont have an account?{" "}
-                    <Link to="/signup" >
-                        Sing Up
+            <div>
+                <Form model="signin" className="login-form" onSubmit={(values) => this.onSubmitHandler(values)}>
+                    <h1 className="font-weight-bold text-center">Sign In</h1>
+                    <h4 className="text-center">Welcome!</h4>
+                    <div className="pt-3">
+                        <Label>Username</Label>
+                        <Control.text
+                            className={cx("input", "form-control")}
+                            model=".username"
+                            id="username"
+                            name="username"
+                            placeholder="Username"
+                            validators={{
+                                required
+                            }}
+                        />
+                        <Errors
+                            className="text-danger"
+                            model=".username"
+                            show="touched"
+                            messages={{
+                                required: 'Required'
+                            }}
+                        />
+                    </div>
+                    <div className="pt-3">
+                        <Label>Password</Label>
+                        <Control.text
+                            type="password"
+                            className={cx("input", "form-control")}
+                            model=".password"
+                            id="password"
+                            name="password"
+                            placeholder="Password"
+                            validators={{
+                                required
+                            }}
+                        />
+                        <Errors
+                            className="text-danger"
+                            model=".password"
+                            show="touched"
+                            messages={{
+                                required: 'Required'
+                            }}
+                        />
+                    </div>
+                    <div className="pt-3">
+                        <Button disabled={this.state.isLoading} className="btn-lg btn-dark btn-block">Sign In</Button>
+                    </div>
+                    <div className="text-center pt-3">
+                        {/* Or continue with your social account */}
+                    </div>
+                    {/* <FacebookLoginButton className="mt-3 mb-3" /> */}
+                    <div className="text-center">
+                        Dont have an account?{" "}
+                        <Link to="/signup" >
+                            Sing Up
                     </Link>
-                </div>
-            </Form>
+                    </div>
+                </Form>
+                {
+                    this.state.isLoading ?
+                        <div class="d-flex justify-content-center">
+                            <div class="spinner-border" role="status">
+                                <span class="sr-only">Loading...</span>
+                            </div>
+                        </div>
+                        :
+                        null
+                }
+            </div>
         )
     }
 }
