@@ -11,27 +11,15 @@ export function userSignInRequest(username, password) {
             method: "POST",
             body: JSON.stringify(loginData),
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
             },
             credentials: 'same-origin'
         })
-            .then(response => {
-                if (response.ok) {
-                    // console.log(response.body);
-                    return response;
-                }
-                else {
-                    var error = new Error('Error ' + response.status + ": " + response.statusText)
-                    error.response = response;
-                    throw error;
-                }
-            },
-                error => {
-                    var errorMessage = new Error(error.message);
-                    throw errorMessage;
-                })
             .then(response => response.json())
-            .then(response => console.log("Successfully SignIn!"))
+            .then(response => {
+                localStorage.setItem('token', response.token)
+                // console.log(response.data.firstname);
+            })
             .catch(error => {
                 // console.log(error.message)
                 alert("Sign Up Failed \n Error: " + error.message);

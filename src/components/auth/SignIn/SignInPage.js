@@ -9,6 +9,7 @@ export default class SignInPage extends Component {
                 <SignInForm
                     userSignInRequest={userSignInRequest}
                     resetSignInForm={resetSignInForm}
+                    history={this.props.history}
                 />
             </div>
 

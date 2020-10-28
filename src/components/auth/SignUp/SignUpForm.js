@@ -166,7 +166,7 @@ class SignUpForm extends Component {
                 {/* <FacebookLoginButton className="mt-3 mb-3" /> */}
                 <div className="text-center">
                     Already have an account?{" "}
-                    <Link to="/" >
+                    <Link to="/signin" >
                         Sign In
                     </Link>
                 </div>

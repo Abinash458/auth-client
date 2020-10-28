@@ -22,9 +22,11 @@ export default class SignInForm extends Component {
         this.setState({ isLoading: true });
         this.props.userSignInRequest(values.username, values.password);
         this.props.resetSignInForm();
+        // this.props.history.push('/');
         this.setState({ isLoading: false });
     }
     render() {
+        // console.log(this.pro)
         return (
             <Form model="signin" className="login-form" onSubmit={(values) => this.onSubmitHandler(values)}>
                 <h1 className="font-weight-bold text-center">Sign In</h1>
