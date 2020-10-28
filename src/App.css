@@ -33,3 +33,10 @@ body {
   border: none;
   padding-left: 12px;
 }
+
+.kep-login-facebook.metro {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+}

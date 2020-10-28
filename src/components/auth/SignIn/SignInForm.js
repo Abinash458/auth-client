@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Button, Label } from 'reactstrap';
 import { Control, Form, Errors } from 'react-redux-form';
 import cx from 'classnames';
-// import { FacebookLoginButton } from 'react-social-login-buttons';
 import { Link } from 'react-router-dom';
+
+import FaceBook from '../FaceBook';
 
 const required = (val) => val && val.length;
 // const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -82,9 +83,11 @@ export default class SignInForm extends Component {
                         <Button disabled={this.state.isLoading} className="btn-lg btn-dark btn-block">Sign In</Button>
                     </div>
                     <div className="text-center pt-3">
-                        {/* Or continue with your social account */}
+                        Or continue with your social account
                     </div>
-                    {/* <FacebookLoginButton className="mt-3 mb-3" /> */}
+                    <div className="text-center pt-3 pb-3 d-flex justify-content-center">
+                        <FaceBook userFacebookSignInRequest={this.props.userFacebookSignInRequest} />
+                    </div>
                     <div className="text-center">
                         Dont have an account?{" "}
                         <Link to="/signup" >
