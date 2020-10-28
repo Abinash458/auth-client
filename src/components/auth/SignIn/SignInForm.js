@@ -28,7 +28,7 @@ export default class SignInForm extends Component {
         return (
             <Form model="signin" className="login-form" onSubmit={(values) => this.onSubmitHandler(values)}>
                 <h1 className="font-weight-bold text-center">Sign In</h1>
-                <h2 className="text-center">Welcome</h2>
+                <h4 className="text-center">Welcome!</h4>
                 <div className="pt-3">
                     <Label>Username</Label>
                     <Control.text
@@ -80,8 +80,9 @@ export default class SignInForm extends Component {
                 </div>
                 {/* <FacebookLoginButton className="mt-3 mb-3" /> */}
                 <div className="text-center">
+                    Dont have an account?{" "}
                     <Link to="/signup" >
-                        Create an account
+                        Sing Up
                     </Link>
                 </div>
             </Form>

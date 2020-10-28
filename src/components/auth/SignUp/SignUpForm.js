@@ -156,7 +156,6 @@ class SignUpForm extends Component {
                         maxDate={new Date()}
                     // minDate={new Date(Date.now() - 12 * 365 * 24 * 60 * 60 * 1000)}
                     />
-                    {/* {renderDatePicker} */}
                 </div>
                 <div className="pt-3">
                     <Button disabled={this.state.isLoading} className="btn-lg btn-dark btn-block">Sign Up</Button>
@@ -166,8 +165,9 @@ class SignUpForm extends Component {
                 </div>
                 {/* <FacebookLoginButton className="mt-3 mb-3" /> */}
                 <div className="text-center">
+                    Already have an account?{" "}
                     <Link to="/" >
-                        Already have an account?
+                        Sign In
                     </Link>
                 </div>
             </Form >

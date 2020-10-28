@@ -3,12 +3,23 @@
   padding: 0;
 }
 
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.signinform-wrapper {
+  position: relative;
+  top: 50px;
+}
+
 .login-form {
   width: 100%;
-  max-width: 330px;
+  max-width: 350px;
   padding: 15px;
   margin: auto;
   height: 100%;
+  background-color: #ccc;
+  border-radius: 10px;
 }
 
 .react-datepicker-wrapper {
@@ -18,4 +29,7 @@
 .datepicker {
   width: 100%;
   height: 40px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 12px;
 }

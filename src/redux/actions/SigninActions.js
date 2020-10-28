@@ -17,7 +17,7 @@ export function userSignInRequest(username, password) {
         })
             .then(response => {
                 if (response.ok) {
-                    // console.log(response);
+                    // console.log(response.body);
                     return response;
                 }
                 else {
