@@ -4,7 +4,7 @@ import { Control, Form, Errors } from 'react-redux-form';
 import cx from 'classnames';
 import { Link } from 'react-router-dom';
 
-import FaceBook from '../FaceBook';
+// import FaceBook from '../FaceBook';
 
 const required = (val) => val && val.length;
 // const maxLength = (len) => (val) => !(val) || (val.length <= len);
@@ -85,9 +85,9 @@ export default class SignInForm extends Component {
                     <div className="text-center pt-3">
                         Or continue with your social account
                     </div>
-                    <div className="text-center pt-3 pb-3 d-flex justify-content-center">
+                    {/* <div className="text-center pt-3 pb-3 d-flex justify-content-center">
                         <FaceBook userFacebookSignInRequest={this.props.userFacebookSignInRequest} />
-                    </div>
+                    </div> */}
                     <div className="text-center">
                         Dont have an account?{" "}
                         <Link to="/signup" >
@@ -97,9 +97,9 @@ export default class SignInForm extends Component {
                 </Form>
                 {
                     this.state.isLoading ?
-                        <div class="d-flex justify-content-center">
-                            <div class="spinner-border" role="status">
-                                <span class="sr-only">Loading...</span>
+                        <div className="d-flex justify-content-center">
+                            <div className="spinner-border" role="status">
+                                <span className="sr-only">Loading...</span>
                             </div>
                         </div>
                         :
